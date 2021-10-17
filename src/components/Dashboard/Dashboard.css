@@ -1,0 +1,10 @@
+.dashboard-wrapper {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  margin-left: 20px;
+}
+
+.css-zow5z4-MuiGrid-root > .MuiGrid-item {
+  padding-left: 0 !important;
+}

@@ -1,0 +1,31 @@
+.swap-wrapper {
+  border: 2px solid white;
+  width: 300px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.swap-wrapper .row:first-child {
+  background-color: white;
+  color: lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.swap-wrapper .row:nth-child(2) {
+  background-color: blue;
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.swap-wrapper .row:nth-child(3) ul li {
+  color: peachpuff;
+}
+
+.swap-wrapper .row:last-child span {
+  color: peachpuff;
+  padding-left: 20px;
+}
