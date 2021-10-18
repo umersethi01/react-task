@@ -1,13 +1,13 @@
 .account-wrapper {
   border: 2px solid white;
-  max-width: 300px;
+  max-width: 340px;
   border-radius: 5px;
   margin-top: 20px;
 }
 
 .account-wrapper .col:first-child {
   border-bottom: 2px solid white;
-  width: 280px;
+  width: 320px;
   display: flex;
   justify-content: space-between;
   padding-top: 10px;

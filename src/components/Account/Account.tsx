@@ -9,6 +9,7 @@ import DAILogo from '../../static/image/DAI-Logo.svg'
 
 const Account = () => {
   const [userStateDataAddress, setUserStateDataAddress] = useState('')
+  const [userStateBalance, setUserStateBalance] = useState('')
 
   let web3
   const onboard = Onboard({
@@ -24,11 +25,17 @@ const Account = () => {
   const handleWallet = async () => {
     const walletSelected = await onboard.walletSelect()
     if (walletSelected) {
-      await onboard.walletCheck()
-      await setUserStateDataAddress(onboard.getState().address)
-      localStorage.setItem('address', userStateDataAddress)
+        await onboard.walletCheck()
+        var data = await (onboard.getState())
+        if(data.balance === null) {
+          await setUserStateBalance('00.00')
+        } else {
+          await setUserStateBalance(data.balance)
+        }
+        await setUserStateDataAddress(data.address)
+        localStorage.setItem('address', userStateDataAddress)
     } else {
-      handleWallet()
+        handleWallet()
     }
   }
 
@@ -57,7 +64,7 @@ const Account = () => {
           <div className='icon'>
             <img src={EthLogo} alt='Ethereum-Logo' />
           </div>
-          <div className='balance'>0.000, ETH</div>
+          <div className='balance'>{userStateBalance}, ETH</div>
         </div>
         <div className='sub-col'>
           <div className='dai-icon'>
